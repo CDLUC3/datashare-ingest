@@ -2,8 +2,8 @@
   <head>
     <title>app/controllers/uploads_controller.rb</title>
     
-    <link href="../../report.css?0.2681081534768678" media="screen" rel="stylesheet" type="text/css" />
-    <script src='../../jquery.js?0.39334212251240575'></script>
+    <link href="../../report.css?0.07164228275577023" media="screen" rel="stylesheet" type="text/css" />
+    <script src='../../jquery.js?0.9628283171862041'></script>
     <script>
       $(function() {
 
@@ -55,10 +55,10 @@
           app/controllers/uploads_controller.rb
           
         </td>
-        <td>129</td>
-        <td>57</td>
+        <td>108</td>
+        <td>49</td>
         <td>7</td>
-        <td>87.7%</td>
+        <td>85.7%</td>
       </tr>
     </table>
 
@@ -928,7 +928,7 @@
             <tr class="never" "">
               <td class='line_number'>106</td>
               <td class='code_line'>
-                <pre>  end</pre>
+                <pre>  end  </pre>
               </td>
               <td class='hit_number'></td>
             </tr>
@@ -944,174 +944,6 @@
             <tr class="never" "">
               <td class='line_number'>108</td>
               <td class='code_line'>
-                <pre>  </pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>109</td>
-              <td class='code_line'>
-                <pre>   # delete all files more than a week old? (?)</pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>110</td>
-              <td class='code_line'>
-                <pre>   # not currently used</pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>111</td>
-              <td class='code_line'>
-                <pre>   def purge_old_files</pre>
-              </td>
-              <td class='hit_number'>6</td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>112</td>
-              <td class='code_line'>
-                <pre>  </pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>113</td>
-              <td class='code_line'>
-                <pre>      uploads = Upload.where('created_at < ?', 1.week.ago)</pre>
-              </td>
-              <td class='hit_number'>2</td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>114</td>
-              <td class='code_line'>
-                <pre>      </pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>115</td>
-              <td class='code_line'>
-                <pre>      # delete each uploads corresponding file, then delete the upload metadata from the db</pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>116</td>
-              <td class='code_line'>
-                <pre>      uploads.each do |u| </pre>
-              </td>
-              <td class='hit_number'>2</td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>117</td>
-              <td class='code_line'>
-                <pre>        file_path = "#{Rails.root}/#{DATASHARE_CONFIG['uploads_dir']}/#{u.record.local_id}"</pre>
-              </td>
-              <td class='hit_number'>2</td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>118</td>
-              <td class='code_line'>
-                <pre>        if File.exists?("#{file_path}")</pre>
-              </td>
-              <td class='hit_number'>2</td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>119</td>
-              <td class='code_line'>
-                <pre>           FileUtils.rm_rf Dir.glob("#{file_path}/*")</pre>
-              </td>
-              <td class='hit_number'>2</td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>120</td>
-              <td class='code_line'>
-                <pre>        end</pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>121</td>
-              <td class='code_line'>
-                <pre>        u.delete</pre>
-              </td>
-              <td class='hit_number'>2</td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>122</td>
-              <td class='code_line'>
-                <pre>      end</pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>123</td>
-              <td class='code_line'>
-                <pre>      </pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="hit" data-hits='#{cov}'"">
-              <td class='line_number'>124</td>
-              <td class='code_line'>
-                <pre>      redirect_to "/records"</pre>
-              </td>
-              <td class='hit_number'>2</td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>125</td>
-              <td class='code_line'>
-                <pre>      </pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>126</td>
-              <td class='code_line'>
-                <pre>   end</pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>127</td>
-              <td class='code_line'>
-                <pre>  </pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>128</td>
-              <td class='code_line'>
-                <pre>  </pre>
-              </td>
-              <td class='hit_number'></td>
-            </tr>
-          
-            <tr class="never" "">
-              <td class='line_number'>129</td>
-              <td class='code_line'>
                 <pre>end</pre>
               </td>
               <td class='hit_number'></td>
@@ -1122,6 +954,6 @@
       
     </div>
     
-    <p>Generated on: 2013-11-21 13:36:03 -0800</p>
+    <p>Generated on: 2014-01-27 09:46:36 -0800</p>
   </body>
 </html>

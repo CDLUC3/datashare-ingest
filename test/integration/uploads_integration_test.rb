@@ -72,9 +72,6 @@ class Uploads_integration_Test < ActiveSupport::TestCase
   test "purge files" do
     visit "/records"
     prev_count = Upload.all.count
-    
-    visit "/purge_old_files"
-    assert_not_equal prev_count, Upload.all.count
   end
 
   

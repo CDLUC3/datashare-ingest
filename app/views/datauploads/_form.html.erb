@@ -1,0 +1,23 @@
+<%= form_for @dataupload do |f| %>
+  <% if @dataupload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dataupload.errors.count, "error") %> prohibited this dataupload from being saved:</h2>
+      <ul>
+      <% @dataupload.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <p>
+    <%= f.file_field :image %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%= stylesheet_link_tag "styles" %>
+
+
+<link rel="icon" href="/datashare/htdocs/images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/datashare/htdocs/images/favicon.ico" type="image/x-icon" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>My Datasets: DataShare - Open data for the global research community</title>
+<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+</head>
+
+
+<body>
+	
+	<!-- begin page id -->
+	<div id="step-three-upload-page"> 
+	<!-- begin outer container -->  
+	  <div id="outer-container"> 
+	    <!-- begin inner container -->
+	    <div id="inner-container"> 
+	       <!-- begin header -->
+			<div id="header">
+				<div id="logo"> <a href="<%=DATASHARE_CONFIG['datashare_url']%>"> 
+
+					<%= image_tag "datashare-logo3.gif",  :size => "320x63", :title => "DataShare: Open data for the global research community", :alt => "DataShare: Open data for the global research community" %></a> 
+
+
+					</a> </div>
+				<div id="logout">
+				<div class="logout-text">Logged in as <i><%= User.find(session[:user_id]).external_id %></i></div>
+					<%= link_to (image_tag "logout.gif"), "/logout",  :size => "92x21", :alt => "Logout" %> 
+				</div>
+			</div>
+		  <!-- end header --> #{MERRITT_CONFIG['merritt_username']}
+			<!-- begin navigation-->
+				<div id="nav-home-menu">
+				  <div id="about-nav" class="menu"><a href="<%=DATASHARE_CONFIG['datashare_url']%>/xtf/search?smode=aboutPage">About</a></div>
+				  <div id="search-nav" class="menu"><a href="<%=DATASHARE_CONFIG['datashare_url']%>/xtf/search">Search Data</a></div>
+				  <div id="publish-nav" class="menu"><a href="/steps_to_publish.html">Share Data (Beta)</a></div>
+				  <div id="my-datasets-nav" class="menu"><a href="/records.html">My Datasets</a></div>
+				</div>
+			<!--end navigation-->
+
+			<!-- begin content -->
+			<div id="content"> 
+				<div id="steps-container">
+					<div id="step-one" >
+						<div class="step-sm-off">STEP ONE:</div>
+						<div class="bold-title-off">Prepare</div>
+					</div>
+					<div id="step-two" >
+						<div class="step-sm-off">STEP TWO:</div>
+						<div class="bold-title-off">Describe</div>
+					</div>
+					<div id="step-three" >
+						<div class="step-sm-on">STEP THREE:</div>
+						<div class="bold-title-on">Upload</div>
+					</div>
+					<div id="step-four" >
+						<div class="step-sm-off">STEP FOUR:</div>
+						<div class="bold-title-off">Review & Submit</div>
+					</div>
+				</div>	
+				<div id="upload-content">
+				<h1>Upload your dataset</h1>
+
+				<div id="left-container">
+
+				<div class="upload-box">
+					<!--<div class="upload-text">Drag &amp; drop your data file here</div>-->
+				</div>
+	
+
+
+
+<div id="datauploads">
+  <%= render @datauploads %>
+
+</div>
+<div class="clear"></div>
+
+<%= form_for Dataupload.new do |f| %>
+  <%= f.label :image, "Choose Data Files:" %>
+  <%= f.hidden_field :record_id, :value => @record.id %>
+  <%= f.file_field :image, multiple: true, name: "dataupload[image]" %>
+<% end %>
+
+
+<p/>
+	<div class="large-button-container">				
+		<a href="/record/<%=@record.id%>">						
+			<%= image_tag "go-back-button.png",  :size => "203x57", :alt => "Go Back and edit metadata" %>
+		</a>
+		<p/>
+		<a href="/record/<%=@record.id%>/review">
+			<%= image_tag "review-button.png",  :size => "203x57", :alt => "Review" %>
+		</a>
+	</div>
+
+
+</div>
+</div>
+</div>
+<!-- end content-->
+
+<!-- begin footer-->
+		<%= render 'layouts/footer' %>
+<!-- end footer-->
+</div>
+</div> <!-- end inner container -->
+</div> <!-- end outer container -->
+</div>
+</body>
+</html>

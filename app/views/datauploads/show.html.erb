@@ -1,0 +1,8 @@
+<h1><%= @dataupload.name %></h1>
+
+<p><%= image_tag @dataupload.image_url %></p>
+
+<p>
+  <%= link_to "Destroy", @dataupload, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "Back to Datauploads", datauploads_path %>
+</p>

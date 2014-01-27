@@ -1,0 +1,354 @@
+<html>
+  <head>
+    <title>Coverage Report</title>
+    <link href="report.css?0.3890226115179716" media="screen" rel="stylesheet" type="text/css" />
+    <link href="index.css?0.9703794073214359" media="screen" rel="stylesheet" type="text/css" />
+    <script src="jquery.js?0.9990716701315756"></script>
+    <script src="jquery.tablesorter.js?0.15625006287785892"></script>
+    <script>
+      $(function() {
+        
+        function filterByPercent() {
+          var p = $('#filter_by_percent').val();
+          if (p == 0 ) {
+            $('#main tbody tr').show();
+          } else if (p == 10) {
+            $('#main tbody tr.row').show();
+            $('#main tbody tr.10').hide();
+          } else if (p == 100) {
+            $('#main tbody tr.row').hide();
+            $('#main tbody tr.10').show();
+          } else {
+            $('#main tbody tr.row').hide();
+            var x = 0;
+            while (x < p) {
+              $('#main tbody tr.' + x).show();
+              x++;
+            }
+          }
+        }
+        
+        function filterByName(name) {
+          $('#main tbody tr:visible').each(function() {
+            if ($(this).attr('id').indexOf(name) != -1) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        }
+        
+        $('#filter_by_percent').change(function(e) {
+          filterByPercent();
+          filterByName($('#filter_by_name').val());
+        });
+      
+        $('#filter_by_name').keyup(function(e) {
+          filterByPercent();
+          filterByName($(this).val());
+        });
+        
+        $("#main").tablesorter(); 
+      });
+    </script>
+  </head>
+  <body>
+    <div id='big_total' class='miss'>94.32%</div>
+    
+    <h1>Coverage Report</h1>
+    
+    <div id='filters'>
+      Filter:
+      <input type='text' id='filter_by_name'>
+      
+      Code Coverage Threshold:
+      <select id='filter_by_percent'>
+        <option value='0'>Show All</option>
+        <option value='1'><= 10% Coverage</option>
+        <option value='2'><= 20% Coverage</option>
+        <option value='3'><= 30% Coverage</option>
+        <option value='4'><= 40% Coverage</option>
+        <option value='5'><= 50% Coverage</option>
+        <option value='6'><= 60% Coverage</option>
+        <option value='7'><= 70% Coverage</option>
+        <option value='8'><= 80% Coverage</option>
+        <option value='9'><= 90% Coverage</option>
+        <option value='10'>< 100% Coverage</option>
+        <option value='100'>= 100% Coverage</option>
+      </select>
+    </div>
+
+    <table cellpadding='0' cellspacing='1'>
+      <tr>
+        <th>Legend</th>
+      </tr>
+      <tr>
+        
+        <td class='hit'>This file was tested 100%!</td>
+      </tr>
+      <tr>
+        <td class='near'>This file was tested >90%!</td>
+      </tr>
+      <tr>
+        <td class='miss'>This file was not tested nearly enough!</td>
+      </tr>
+    </table>
+    
+    <div>&nbsp;</div>
+
+    <table cellpadding="0" cellspacing='1' id='main'>
+      <thead>
+        <tr class='header'>
+          <th>File</th>
+          <th>Lines</th>
+          <th>Lines Of Code</th>
+          <th>Untested Lines of Code</th>
+          <th>Tested %</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        
+          <tr class='row hit 10' id='app/controllers/application_controller.rb'>
+            <td>
+              <a href="app/controllers/application_controller.rb.html">app/controllers/application_controller.rb</a>
+            </td>
+            <td>3</td>
+            <td>2</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/controllers/datauploads_controller.rb'>
+            <td>
+              <a href="app/controllers/datauploads_controller.rb.html">app/controllers/datauploads_controller.rb</a>
+            </td>
+            <td>24</td>
+            <td>13</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/controllers/login_controller.rb'>
+            <td>
+              <a href="app/controllers/login_controller.rb.html">app/controllers/login_controller.rb</a>
+            </td>
+            <td>34</td>
+            <td>15</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row near 9' id='app/controllers/records_controller.rb'>
+            <td>
+              <a href="app/controllers/records_controller.rb.html">app/controllers/records_controller.rb</a>
+            </td>
+            <td>207</td>
+            <td>111</td>
+            <td>3</td>
+            <td>97.3%</td>
+          </tr>
+        
+          <tr class='row miss 8' id='app/controllers/uploads_controller.rb'>
+            <td>
+              <a href="app/controllers/uploads_controller.rb.html">app/controllers/uploads_controller.rb</a>
+            </td>
+            <td>129</td>
+            <td>57</td>
+            <td>7</td>
+            <td>87.7%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/helpers/application_helper.rb'>
+            <td>
+              <a href="app/helpers/application_helper.rb.html">app/helpers/application_helper.rb</a>
+            </td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/helpers/creators_helper.rb'>
+            <td>
+              <a href="app/helpers/creators_helper.rb.html">app/helpers/creators_helper.rb</a>
+            </td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/helpers/login_helper.rb'>
+            <td>
+              <a href="app/helpers/login_helper.rb.html">app/helpers/login_helper.rb</a>
+            </td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/helpers/record_helper.rb'>
+            <td>
+              <a href="app/helpers/record_helper.rb.html">app/helpers/record_helper.rb</a>
+            </td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/helpers/uploads_helper.rb'>
+            <td>
+              <a href="app/helpers/uploads_helper.rb.html">app/helpers/uploads_helper.rb</a>
+            </td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/alternate_identifier.rb'>
+            <td>
+              <a href="app/models/alternate_identifier.rb.html">app/models/alternate_identifier.rb</a>
+            </td>
+            <td>4</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/contributor.rb'>
+            <td>
+              <a href="app/models/contributor.rb.html">app/models/contributor.rb</a>
+            </td>
+            <td>4</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/creator.rb'>
+            <td>
+              <a href="app/models/creator.rb.html">app/models/creator.rb</a>
+            </td>
+            <td>4</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row miss 7' id='app/models/dataupload.rb'>
+            <td>
+              <a href="app/models/dataupload.rb.html">app/models/dataupload.rb</a>
+            </td>
+            <td>18</td>
+            <td>8</td>
+            <td>2</td>
+            <td>75.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/description.rb'>
+            <td>
+              <a href="app/models/description.rb.html">app/models/description.rb</a>
+            </td>
+            <td>4</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row near 9' id='app/models/record.rb'>
+            <td>
+              <a href="app/models/record.rb.html">app/models/record.rb</a>
+            </td>
+            <td>276</td>
+            <td>106</td>
+            <td>6</td>
+            <td>94.3%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/relation.rb'>
+            <td>
+              <a href="app/models/relation.rb.html">app/models/relation.rb</a>
+            </td>
+            <td>4</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/subject.rb'>
+            <td>
+              <a href="app/models/subject.rb.html">app/models/subject.rb</a>
+            </td>
+            <td>4</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row miss 8' id='app/models/submission_log.rb'>
+            <td>
+              <a href="app/models/submission_log.rb.html">app/models/submission_log.rb</a>
+            </td>
+            <td>21</td>
+            <td>9</td>
+            <td>1</td>
+            <td>88.9%</td>
+          </tr>
+        
+          <tr class='row near 9' id='app/models/upload.rb'>
+            <td>
+              <a href="app/models/upload.rb.html">app/models/upload.rb</a>
+            </td>
+            <td>34</td>
+            <td>14</td>
+            <td>1</td>
+            <td>92.9%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/upload_archive.rb'>
+            <td>
+              <a href="app/models/upload_archive.rb.html">app/models/upload_archive.rb</a>
+            </td>
+            <td>5</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row hit 10' id='app/models/user.rb'>
+            <td>
+              <a href="app/models/user.rb.html">app/models/user.rb</a>
+            </td>
+            <td>4</td>
+            <td>3</td>
+            <td>0</td>
+            <td>100.0%</td>
+          </tr>
+        
+          <tr class='row miss 8' id='app/uploaders/image_uploader.rb'>
+            <td>
+              <a href="app/uploaders/image_uploader.rb.html">app/uploaders/image_uploader.rb</a>
+            </td>
+            <td>20</td>
+            <td>6</td>
+            <td>1</td>
+            <td>83.3%</td>
+          </tr>
+        
+      </tbody>
+      
+      <tr class='header'>
+        <th>Total</th>
+        <th>809</th>
+        <th>370</th>
+        <th>21</th>
+        <th>94.32%</th>
+      </tr>
+    </table>
+    <p>Generated on: 2013-11-21 13:36:03 -0800</p>
+  </body>
+</html>

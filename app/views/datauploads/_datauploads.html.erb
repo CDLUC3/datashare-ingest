@@ -1,0 +1,7 @@
+<div class="dataupload">
+  <div class="name"><%= dataupload.name %></div>
+  <div class="actions">
+    <%= link_to "edit", edit_dataupload_path(dataupload) %> |
+    <%= link_to "remove", dataupload, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+</div>

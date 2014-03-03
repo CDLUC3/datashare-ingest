@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'rubyzip'
+gem 'rubyzip',  "~> 0.9.9"
 
 gem 'whenever', :require => false
 
@@ -14,7 +14,6 @@ gem 'whenever', :require => false
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'less-rails'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -26,8 +25,8 @@ end
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
 gem 'paperclip'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '2.1.7'
+gem 'less-rails', '2.3.3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -44,10 +43,10 @@ gem 'twitter-bootstrap-rails'
 # To use debugger
 # gem 'debugger'
 gem 'carrierwave'
-gem 'capybara'
+#gem 'capybara', '1.0.0'
 
 group :test do
   gem 'launchy'
-  gem "capybara-webkit"
+  #gem "capybara-webkit", '0.7.2'
   gem 'cover_me'
 end

@@ -43,10 +43,11 @@ gem 'less-rails', '2.3.3'
 # To use debugger
 # gem 'debugger'
 gem 'carrierwave'
-#gem 'capybara', '1.0.0'
+
 
 group :test do
   gem 'launchy'
-  #gem "capybara-webkit", '0.7.2'
-  gem 'cover_me'
+  gem 'capybara'
+  gem 'capybara-webkit', '0.14.2'
+  #gem 'cover_me', '>= 1.2.0'
 end

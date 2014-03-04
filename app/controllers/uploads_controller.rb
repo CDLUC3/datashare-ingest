@@ -49,11 +49,6 @@ class UploadsController < ApplicationController
        end
      end
     
-    #if the name already exists, append a time stamp
-    #if @upload.record.uploads.pluck(:upload_file_name).include?(@upload.upload_file_name)
-    #  @upload.upload_file_name = @upload.upload_file_name + "_" + Time.now.utc.iso8601.gsub('-', '').gsub(':', '')
-    #end
-    
     p = params[:upload]
     name = p[:upload].original_filename
     directory = "#{DATASHARE_CONFIG['uploads_dir']}/" + Record.find(@upload.record_id).local_id

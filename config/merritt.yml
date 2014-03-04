@@ -1,5 +1,5 @@
 defaults: &DEFAULTS
-    merritt_endpoint: "https://merritt-stage.cdlib.org/object/update"
+    merritt_endpoint: "https://merritt-repository.cdlib.org/object/ingest"
     merritt_username: "username"
     merritt_password: "password"
     merritt_profile: "repository_name_submitter_content"

@@ -20,11 +20,9 @@ class Uploads_integration_Test < ActiveSupport::TestCase
     FileUtils.rm_rf(Dir.glob("#{Rails.root}/#{DATASHARE_CONFIG['uploads_dir']}"))
   end
 
-  # broken test, need to follow javascript redirect
   test "navigate to upload page" do
     visit "/record"
-    click_button 'Save And Continue'  
-    #assert page.has_content?('Upload your datasets to DataShare')
+    assert page.has_content?('Upload your datasets to DataShare')
   end
   
   # visit the page and validate text
@@ -32,7 +30,7 @@ class Uploads_integration_Test < ActiveSupport::TestCase
   test "file upload page" do
     id = records(:one).id
     visit "/record/#{id}/uploads"
-    assert page.has_content?("Upload")  
+    assert page.has_content?("My Datasets")  
   end
   
   # visit upload page for no record

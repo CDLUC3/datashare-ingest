@@ -77,8 +77,6 @@ class RecordsController < ApplicationController
   
     if params[:add_data] == "add_data"
       render :js => "window.location = '/record/#{@record.id}/uploads'"
-    #elsif params[:review] == "review"
-    #  render :js => "window.location = '/record/#{@record.id}/review'"
     else
       redirect_to :action => "record", :id=> @record.id
     end

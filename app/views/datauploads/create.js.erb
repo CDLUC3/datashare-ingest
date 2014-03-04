@@ -1,5 +1,0 @@
-<% if @dataupload.new_record? %>
-  alert("Failed to upload dataupload: <%= j @dataupload.errors.full_messages.join(', ').html_safe %>");
-<% else %>
-  $("#datauploads").append("<%= j render(@dataupload) %>");
-<% end %>

@@ -4,8 +4,6 @@ DataIngest::Application.routes.draw do
   
   match 'record/:record_id/uploads', :to => "uploads#index"
   match 'record/:record_id/uploads/new', :to => "uploads#new"
-
-  resources :datauploads
   
   match 'update_dataupload/:id', :to => "datauploads#update_dataupload"
   

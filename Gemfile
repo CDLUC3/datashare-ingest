@@ -49,5 +49,5 @@ group :test do
   gem 'launchy'
   gem 'capybara'
   gem 'capybara-webkit', '0.14.2'
-  #gem 'cover_me', '>= 1.2.0'
+  gem 'simplecov', '~> 0.7.1'
 end

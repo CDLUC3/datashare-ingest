@@ -199,7 +199,6 @@ class Records_integration_Test < ActiveSupport::TestCase
     assert page.has_content?("Study1")
     first(:link, 'Delete').click
     assert !page.has_content?("Study1")
-    
   end
   
   

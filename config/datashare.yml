@@ -1,6 +1,6 @@
 defaults: &DEFAULTS
     uploads_dir: uploads
-    datashare_url: "http://hostname.ucsf.edu"
+    datashare_url: "http://localhost:8080"
     external_identifier: "eppn"
     logout_path: "/logout_page"
        

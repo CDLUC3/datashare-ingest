@@ -17,3 +17,6 @@
 
 # ignore capybara display pages
 capybara*.html
+
+#ignore simplecov testing output
+/coverage

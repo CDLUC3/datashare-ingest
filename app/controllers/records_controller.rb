@@ -138,7 +138,6 @@ class RecordsController < ApplicationController
   def review
     @record = Record.find(params[:id])
     @xmlout = @record.review
-    @record.generate_merritt_zip
     
     render :review, :layout => false
   end
@@ -149,18 +148,39 @@ class RecordsController < ApplicationController
     if !@record.required_fields.empty?
       redirect_to :action => "review", :id => @record.id
     else    
-      @merritt_request = @record.send_archive_to_merritt
-      @merritt_response = `#{@merritt_request}`
-                   
+      
+      @merritt_response = "PROCESSING"
+
+      # processing of large files can take a long time
+      # so we will handle this in a separate thread
+      
+      Thread.new do
+        @record.generate_merritt_zip
+        @merritt_request = @record.send_archive_to_merritt
+        @merritt_response = `#{@merritt_request}`
+        submissionLog = SubmissionLog.new
+        submissionLog.archiveresponse = @merritt_response
+        submissionLog.record = @record
+        submissionLog.save
+         # if the submission was successful, remove the files from local
+          # storage and add logging information
+        if !(submissionLog.filtered_response == "Failed")
+          @record.purge_files(submissionLog.id)
+        end
+        ActiveRecord::Base.connection.close
+      end
+
+      sleep(5)
+
       submissionLog = SubmissionLog.new
-      submissionLog.archiveresponse = @merritt_response
-      submissionLog.record = @record
-      submissionLog.save   
-    
-      # if the submission was successful, remove the files from local
-      # storage and add logging information
-      if !(submissionLog.filtered_response == "Failed")
-        @record.purge_files(submissionLog.id)
+
+      # if it has taken more than 5 seconds to process, we will create an intermediary
+      # entry to inform the user that the upload is still processing
+      # this message will appear when the user is forwarded to the submission log page
+      if @merritt_response == "PROCESSING"
+            submissionLog.archiveresponse = @merritt_response
+            submissionLog.record = @record
+            submissionLog.save
       end
       
       redirect_to :action => "submission_log", :id=> @record.id   

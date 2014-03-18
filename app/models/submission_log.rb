@@ -7,13 +7,14 @@ class SubmissionLog < ActiveRecord::Base
   def filtered_response
     
     if !self.archiveresponse.nil?
-  
+
       if self.archiveresponse.include?("QUEUED") || self.archiveresponse.include?("PENDING")
         return "Success: Record Uploaded to Datashare"
+      elsif self.archiveresponse.include?("PROCESSING")
+        return "Sending To Merritt (Processing)"
       else
         return "Failed"# + self.archiveresponse
       end
-    
     end
     
   end

@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-03-04T11:00:42-08:00">2014-03-04T11:00:42-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-03-18T08:38:15-07:00">2014-03-18T08:38:15-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">95.45%</span></span>
+    (<span class="covered_percent"><span class="green">94.63%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.23
+         2.21
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>53</b> files in total.
-    <b>660</b> relevant lines. 
-    <span class="green"><b>630</b> lines covered</span> and
-    <span class="red"><b>30</b> lines missed </span>
+    <b>671</b> relevant lines. 
+    <span class="green"><b>635</b> lines covered</span> and
+    <span class="red"><b>36</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#587235a4bd7e481938447035968cf66eb47572fe" class="src_link" title="app/controllers/records_controller.rb">app/controllers/records_controller.rb</a></td>
-        <td class="green strong">96.4 %</td>
-        <td>205</td>
+        <td class="green strong">92.5 %</td>
+        <td>225</td>
+        <td>120</td>
         <td>111</td>
-        <td>107</td>
-        <td>4</td>
-        <td>5.7</td>
+        <td>9</td>
+        <td>5.3</td>
       </tr>
       
       <tr>
@@ -232,12 +232,12 @@
       
       <tr>
         <td class="strong"><a href="#b2475acf58146b664e0fce3b377b6b1a3128eae5" class="src_link" title="app/models/submission_log.rb">app/models/submission_log.rb</a></td>
-        <td class="yellow strong">88.89 %</td>
-        <td>21</td>
+        <td class="yellow strong">81.82 %</td>
+        <td>22</td>
+        <td>11</td>
         <td>9</td>
-        <td>8</td>
-        <td>1</td>
-        <td>3.7</td>
+        <td>2</td>
+        <td>2.8</td>
       </tr>
       
       <tr>
@@ -1019,11 +1019,11 @@
         <div class="source_table" id="587235a4bd7e481938447035968cf66eb47572fe">
   <div class="header">
     <h3>app/controllers/records_controller.rb</h3>
-    <h4><span class="green">96.4 %</span> covered</h4>
+    <h4><span class="green">92.5 %</span> covered</h4>
     <div>
-      <b>111</b> relevant lines. 
-      <span class="green"><b>107</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <b>120</b> relevant lines. 
+      <span class="green"><b>111</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
     </div>
   </div>
   
@@ -1870,391 +1870,511 @@
           <code class="ruby">    @xmlout = @record.review</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="141">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @record.generate_merritt_zip</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="142">
+        <li class="never" data-hits="" data-linenumber="141">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
+        <li class="covered" data-hits="1" data-linenumber="142">
           <span class="hits">1</span>
           
           <code class="ruby">    render :review, :layout =&gt; false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="144">
+        <li class="never" data-hits="" data-linenumber="143">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="145">
+        <li class="never" data-hits="" data-linenumber="144">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="146">
+        <li class="covered" data-hits="3" data-linenumber="145">
           <span class="hits">3</span>
           
           <code class="ruby">  def send_archive_to_merritt</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="147">
+        <li class="covered" data-hits="1" data-linenumber="146">
           <span class="hits">1</span>
           
           <code class="ruby">    @record = Record.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="never" data-hits="" data-linenumber="147">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="149">
+        <li class="covered" data-hits="1" data-linenumber="148">
           <span class="hits">1</span>
           
           <code class="ruby">    if !@record.required_fields.empty?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="150">
+        <li class="missed" data-hits="0" data-linenumber="149">
           
           
           <code class="ruby">      redirect_to :action =&gt; &quot;review&quot;, :id =&gt; @record.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="151">
+        <li class="never" data-hits="" data-linenumber="150">
           
           
           <code class="ruby">    else    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="152">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @merritt_request = @record.send_archive_to_merritt</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="153">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @merritt_response = `#{@merritt_request}`</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="154">
-          
-          
-          <code class="ruby">                   </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="155">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      submissionLog = SubmissionLog.new</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="156">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      submissionLog.archiveresponse = @merritt_response</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="157">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      submissionLog.record = @record</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="158">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      submissionLog.save   </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="159">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="160">
-          
-          
-          <code class="ruby">      # if the submission was successful, remove the files from local</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="161">
-          
-          
-          <code class="ruby">      # storage and add logging information</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="162">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      if !(submissionLog.filtered_response == &quot;Failed&quot;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="163">
-          
-          
-          <code class="ruby">        @record.purge_files(submissionLog.id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="164">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="165">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby">      </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="166">
+        <li class="covered" data-hits="1" data-linenumber="152">
           <span class="hits">1</span>
           
-          <code class="ruby">      redirect_to :action =&gt; &quot;submission_log&quot;, :id=&gt; @record.id   </code>
+          <code class="ruby">      @merritt_response = &quot;PROCESSING&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="167">
+        <li class="never" data-hits="" data-linenumber="153">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="168">
+        <li class="never" data-hits="" data-linenumber="154">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">      # processing of large files can take a long time</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="155">
+          
+          
+          <code class="ruby">      # so we will handle this in a separate thread</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="157">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      Thread.new do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @record.generate_merritt_zip</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @merritt_request = @record.send_archive_to_merritt</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="160">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @merritt_response = `#{@merritt_request}`</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="161">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        submissionLog = SubmissionLog.new</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="162">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        submissionLog.archiveresponse = @merritt_response</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="163">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        submissionLog.record = @record</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="164">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        submissionLog.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="165">
+          
+          
+          <code class="ruby">         # if the submission was successful, remove the files from local</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="166">
+          
+          
+          <code class="ruby">          # storage and add logging information</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="167">
+          
+          
+          <code class="ruby">        if !(submissionLog.filtered_response == &quot;Failed&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="168">
+          
+          
+          <code class="ruby">          @record.purge_files(submissionLog.id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="169">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="170">
+        <li class="missed" data-hits="0" data-linenumber="170">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">        ActiveRecord::Base.connection.close</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="171">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="172">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="172">
           
-          <code class="ruby">  def verify_ownership </code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="63" data-linenumber="173">
-          <span class="hits">63</span>
-          
-          <code class="ruby">    @user = User.find_by_id(session[:user_id])</code>
-        </li>
-      
-        <li class="covered" data-hits="63" data-linenumber="174">
-          <span class="hits">63</span>
-          
-          <code class="ruby">    @record = Record.find_by_id(params[:id])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="175">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="covered" data-hits="63" data-linenumber="176">
-          <span class="hits">63</span>
-          
-          <code class="ruby">    if !@user.nil? &amp;&amp; !@record.nil?</code>
-        </li>
-      
-        <li class="covered" data-hits="24" data-linenumber="177">
-          <span class="hits">24</span>
-          
-          <code class="ruby">      if @record.user_id != @user.id</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="178">
+        <li class="covered" data-hits="1" data-linenumber="173">
           <span class="hits">1</span>
           
-          <code class="ruby">        redirect_to &quot;/records&quot;</code>
+          <code class="ruby">      sleep(5)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="174">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="175">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      submissionLog = SubmissionLog.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="176">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="177">
+          
+          
+          <code class="ruby">      # if it has taken more than 5 seconds to process, we will create an intermediary</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="178">
+          
+          
+          <code class="ruby">      # entry to inform the user that the upload is still processing</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="179">
           
           
+          <code class="ruby">      # this message will appear when the user is forwarded to the submission log page</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="180">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      if @merritt_response == &quot;PROCESSING&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="181">
+          
+          
+          <code class="ruby">            submissionLog.archiveresponse = @merritt_response</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="182">
+          
+          
+          <code class="ruby">            submissionLog.record = @record</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="183">
+          
+          
+          <code class="ruby">            submissionLog.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="184">
+          
+          
           <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="180">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="181">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="182">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="183">
-          <span class="hits">3</span>
-          
-          <code class="ruby">  def submission_log</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="184">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    @record = Record.find_by_id(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="185">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="186">
+        <li class="covered" data-hits="1" data-linenumber="186">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">      redirect_to :action =&gt; &quot;submission_log&quot;, :id=&gt; @record.id   </code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="187">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="187">
           
-          <code class="ruby">  def terms_of_use</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="188">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="189">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="190">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="190">
           
-          <code class="ruby">  def prepare_to_submit</code>
+          
+          <code class="ruby">  </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="191">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="192">
-          
-          
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="193">
+        <li class="covered" data-hits="3" data-linenumber="192">
           <span class="hits">3</span>
           
-          <code class="ruby">  def upload_faq_page</code>
+          <code class="ruby">  def verify_ownership </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="194">
+        <li class="covered" data-hits="63" data-linenumber="193">
+          <span class="hits">63</span>
           
+          <code class="ruby">    @user = User.find_by_id(session[:user_id])</code>
+        </li>
+      
+        <li class="covered" data-hits="63" data-linenumber="194">
+          <span class="hits">63</span>
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    @record = Record.find_by_id(params[:id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="195">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="196">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="63" data-linenumber="196">
+          <span class="hits">63</span>
           
-          <code class="ruby">  def metadata_basics</code>
+          <code class="ruby">    if !@user.nil? &amp;&amp; !@record.nil?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="197">
+        <li class="covered" data-hits="24" data-linenumber="197">
+          <span class="hits">24</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      if @record.user_id != @user.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="198">
+        <li class="covered" data-hits="1" data-linenumber="198">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">        redirect_to &quot;/records&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="199">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="199">
           
-          <code class="ruby">  def steps_to_publish</code>
+          
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="200">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="201">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="202">
+          
+          
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="202">
+        <li class="covered" data-hits="3" data-linenumber="203">
           <span class="hits">3</span>
           
-          <code class="ruby">  def data_use_agreement</code>
+          <code class="ruby">  def submission_log</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="203">
+        <li class="covered" data-hits="2" data-linenumber="204">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @record = Record.find_by_id(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="205">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="204">
+        <li class="never" data-hits="" data-linenumber="206">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="205">
+        <li class="covered" data-hits="3" data-linenumber="207">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  def terms_of_use</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="208">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="209">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="210">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  def prepare_to_submit</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="211">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="212">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="213">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  def upload_faq_page</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="214">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="215">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="216">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  def metadata_basics</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="217">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="218">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="219">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  def steps_to_publish</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="220">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="221">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="222">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  def data_use_agreement</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="223">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="224">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="225">
           
           
           <code class="ruby">end</code>
@@ -5105,11 +5225,11 @@
         <div class="source_table" id="b2475acf58146b664e0fce3b377b6b1a3128eae5">
   <div class="header">
     <h3>app/models/submission_log.rb</h3>
-    <h4><span class="yellow">88.89 %</span> covered</h4>
+    <h4><span class="yellow">81.82 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -5164,8 +5284,8 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="9">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
           
           <code class="ruby">    if !self.archiveresponse.nil?</code>
         </li>
@@ -5173,11 +5293,11 @@
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="11">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="4" data-linenumber="11">
+          <span class="hits">4</span>
           
           <code class="ruby">      if self.archiveresponse.include?(&quot;QUEUED&quot;) || self.archiveresponse.include?(&quot;PENDING&quot;)</code>
         </li>
@@ -5188,55 +5308,61 @@
           <code class="ruby">        return &quot;Success: Record Uploaded to Datashare&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="covered" data-hits="4" data-linenumber="13">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">      else</code>
+          <code class="ruby">      elsif self.archiveresponse.include?(&quot;PROCESSING&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="14">
-          <span class="hits">6</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
           
-          <code class="ruby">        return &quot;Failed&quot;# + self.archiveresponse</code>
+          
+          <code class="ruby">        return &quot;Sending To Merritt (Processing)&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">      else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="4" data-linenumber="16">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">    </code>
+          <code class="ruby">        return &quot;Failed&quot;# + self.archiveresponse</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  </code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>
@@ -9031,7 +9157,7 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    assert page.has_content?('Upload your datasets to DataShare')</code>
+          <code class="ruby">    assert page.has_content?('My Datasets')</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">

@@ -22,7 +22,7 @@ class Uploads_integration_Test < ActiveSupport::TestCase
 
   test "navigate to upload page" do
     visit "/record"
-    assert page.has_content?('Upload your datasets to DataShare')
+    assert page.has_content?('My Datasets')
   end
   
   # visit the page and validate text

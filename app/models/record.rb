@@ -163,16 +163,9 @@ class Record < ActiveRecord::Base
      Zip::ZipFile.open(zipfile_name, Zip::ZipFile::CREATE) do |zipfile|       
        zipfile.add("mrt-datacite.xml", "#{file_path}/mrt-datacite.xml")
        
-       self.uploads.each do |d| 
-         
-          # a temporary terrible hack to avoid the file corruption problem
-          # on chunked uploads     
-          
-          if File.exist?(file_path + "/temp_" + d.upload_file_name)
-            File.delete(file_path + "/" + d.upload_file_name)
-            File.rename(file_path + "/temp_" + d.upload_file_name, file_path + "/" + d.upload_file_name)
-          end
-          
+       self.purge_temp_files
+       
+       self.uploads.each do |d|  
           zipfile.add("#{d.upload_file_name}", "#{file_path}/#{d.upload_file_name}")
        end
      end
@@ -272,5 +265,23 @@ class Record < ActiveRecord::Base
       return recommended_fields
    
    end
+  
+  # temp files created for multipart uploads
+  def purge_temp_files
+    
+    file_path = "#{Rails.root}/#{DATASHARE_CONFIG['uploads_dir']}/#{self.local_id}"
+    
+    self.uploads.each do |d| 
+       
+        # a temporary terrible hack to avoid the file corruption problem
+        # on chunked uploads     
+        
+        if File.exist?(file_path + "/temp_" + d.upload_file_name)
+          File.delete(file_path + "/" + d.upload_file_name)
+          File.rename(file_path + "/temp_" + d.upload_file_name, file_path + "/" + d.upload_file_name)
+        end
+     end
+  end
+  
   
 end

@@ -206,7 +206,8 @@
       $('#fileupload').fileupload({
 	    maxChunkSize: 1048576,
 		//acceptFileTypes: /(\.|\/)(gif|jpe?g|png|tif?f)$/i
-		maxFileSize: 1048576 * 10000// 10GB
+		maxFileSize: 1048576 * 200,// 5GB,
+		limitMultiFileUploadSize: 1048576 * 200
 	});
       // 
       // Load existing files:

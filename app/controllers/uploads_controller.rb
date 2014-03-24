@@ -1,12 +1,14 @@
 class UploadsController < ApplicationController
 
   def index
-    #@uploads = Upload.all
-    @uploads = Upload.find_all_by_record_id(params[:record_id])
+
     @record_id = params[:record_id]
 
     @user = User.find_by_id(session[:user_id])
     @record = Record.find_by_id(params[:record_id])
+    @record.purge_temp_files
+
+    @uploads = Upload.find_all_by_record_id(params[:record_id])
 
     if @record.nil?
       redirect_to "/records"

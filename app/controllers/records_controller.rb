@@ -137,6 +137,9 @@ class RecordsController < ApplicationController
   
   def review
     @record = Record.find(params[:id])
+    
+    @record.purge_temp_files
+    
     @xmlout = @record.review
     
     render :review, :layout => false

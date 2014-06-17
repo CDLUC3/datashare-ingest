@@ -7,9 +7,15 @@ class LoginController < ApplicationController
     if user.nil?
       user = User.new
       user.external_id = request.headers[DATASHARE_CONFIG['external_identifier']]
+      user.email = request.headers[DATASHARE_CONFIG['email']]
       user.save
+    else
+      if user.email.blank?
+        user.email = request.headers[DATASHARE_CONFIG['email']]
+        user.save
+      end
     end
-
+    
     session[:user_id] = user.id
 
     redirect_to "/records"

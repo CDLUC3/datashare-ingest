@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121001015) do
+ActiveRecord::Schema.define(:version => 20140617170458) do
 
   create_table "alternate_identifiers", :force => true do |t|
     t.string   "alternateIdentifierName"
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20131121001015) do
     t.string   "external_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "email"
   end
 
 end

@@ -207,7 +207,7 @@ class Record < ActiveRecord::Base
      # tics will execute, for now, just print to screen
       # note that the 2>&1 is to redirect sterr to stout
     
-     sys_output = "curl --insecure --verbose -u #{MERRITT_CONFIG['merritt_username']}:#{MERRITT_CONFIG['merritt_password']} -F \"file=@./#{DATASHARE_CONFIG['uploads_dir']}/#{self.local_id}/#{self.local_id}.zip\" -F \"type=container\" -F \"submitter=#{self.user.external_id}\" -F \"responseForm=xml\" -F \"profile=#{MERRITT_CONFIG['merritt_profile']}\" -F \"localIdentifier=#{self.local_id}\" #{MERRITT_CONFIG['merritt_endpoint']} 2>&1"
+     sys_output = "curl --insecure --verbose -u #{MERRITT_CONFIG['merritt_username']}:#{MERRITT_CONFIG['merritt_password']} -F \"file=@./#{DATASHARE_CONFIG['uploads_dir']}/#{self.local_id}/#{self.local_id}.zip\" -F \"notification=#{self.user.email}\" -F \"type=container\" -F \"submitter=#{self.user.external_id}\" -F \"responseForm=xml\" -F \"profile=#{MERRITT_CONFIG['merritt_profile']}\" -F \"localIdentifier=#{self.local_id}\" #{MERRITT_CONFIG['merritt_endpoint']} 2>&1"
           
      return sys_output  
    end
